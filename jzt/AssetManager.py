@@ -6,7 +6,7 @@ import os
 
 class AssetManager:
     
-    url="https://console.jazeetech.com/getAsset/"
+    url="https://commandcenter.jazeetech.com/getAsset/"
     token_file = str(os.path.join(os.getenv('PROGRAMDATA'), "jazee_orchestrator", "token.txt"))
     token = None
     access_key=None
