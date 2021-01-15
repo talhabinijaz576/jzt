@@ -2,14 +2,14 @@ from distutils.core import setup
 setup(
   name = 'jzt',
   packages = ['jzt'],
-  version = '1.0.0.1',
+  version = '1.0.0.2',
   license='MIT',
   description = 'JazeeTech Bot Manager',
   author = 'Talha Ijaz',
   author_email = 'talhabinijaz576@yahoo.com',
   url = 'https://github.com/talhabinijaz576/jzt',
-  download_url = 'https://github.com/talhabinijaz576/jzt/archive/1.0.0.1.tar.gz',
-  keywords = ['jzt', 'jazee tech', 'jazee'],
+  download_url = 'https://github.com/talhabinijaz576/jzt/archive/1.0.0.2.tar.gz',
+  keywords = ['jzt', 'jazee tech', 'jazee', 'commandcenter', 'bot manager', 'asset manager', 'assetmanager'],
   install_requires=[
           'requests',
       ],
