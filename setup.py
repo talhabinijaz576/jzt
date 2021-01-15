@@ -2,12 +2,13 @@ from distutils.core import setup
 setup(
   name = 'jzt',
   packages = ['jzt'],
-  version = '0.0.0.0',
+  version = '1.0.0.1',
   license='MIT',
   description = 'JazeeTech Bot Manager',
   author = 'Talha Ijaz',
+  author_email = 'talhabinijaz576@yahoo.com',
   url = 'https://github.com/talhabinijaz576/jzt',
-  download_url = 'https://github.com/joelbarmettlerUZH/Scrapeasy/archive/pypi-0_1_3.tar.gz',
+  download_url = 'https://github.com/talhabinijaz576/jzt/archive/1.0.0.1.tar.gz',
   keywords = ['jzt', 'jazee tech', 'jazee'],
   install_requires=[
           'requests',
@@ -17,7 +18,7 @@ setup(
     #   3 - Alpha
     #   4 - Beta
     #   5 - Production/Stable
-    'Development Status :: 3 - Alpha',
+    'Development Status :: 4 - Beta',
 
     # Indicate who your project is intended for
     'Intended Audience :: Developers',
