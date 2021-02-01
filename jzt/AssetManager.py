@@ -9,11 +9,11 @@ class AssetManager:
     url="https://commandcenter.jazeetech.com/getAsset/"
     token_file = str(os.path.join(os.getenv('PROGRAMDATA'), "jazee_orchestrator", "token.txt"))
     token = None
-    access_key=None
+    access_key = ""
     
-    def __init__(self, access_key=None, token_file=None, url=""):
+    def __init__(self, access_key="", token_file=None, url=""):
         
-        if(access_key!=None):
+        if(len(access_key)>5):
             self.access_key = access_key
         if(token_file!=None):
             self.token_file = token_file
@@ -25,16 +25,17 @@ class AssetManager:
         if(len(self.token)<10):
             self.token = None
             
-        if(self.token==None and self.access_key==None):
+        if(self.token==None and (len(self.access_key)<5 or self.access_key==None) ):
             raise Exception("Please provide access key for unregistered device")
             
             
     def getAsset(self, name=""):
 
-        if(self.access_key!=None):
+        if(self.access_key!=None and len(self.access_key)>5):
             request_url = self.url+"?asset={0}&key={1}".format(name, self.access_key)
         elif(self.token!=None):
             request_url = self.url+"?asset={0}&token={1}".format(name, self.token)
+        
         response = requests.get(request_url)
         if(response.status_code==200):
             response = response.content.decode('ascii')
