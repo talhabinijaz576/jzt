@@ -7,12 +7,17 @@ import os
 class AssetManager:
     
     url="https://commandcenter.jazeetech.com/getAsset/"
-    token_file = str(os.path.join(os.getenv('PROGRAMDATA'), "jazee_orchestrator", "token.txt"))
+    
     token = None
     access_key = ""
     
     def __init__(self, access_key="", token_file=None, url=""):
         
+        try:
+            self.token_file = str(os.path.join(os.getenv('PROGRAMDATA'), "jazee_orchestrator", "token.txt"))
+        except:
+            self.token_file = None
+            
         if(len(access_key)>5):
             self.access_key = access_key
         if(token_file!=None):
@@ -20,8 +25,10 @@ class AssetManager:
         if(len(url)!=0):
             self.url = url
          
-        if(os.path.exists(self.token_file)):
-            self.token = open(self.token_file, 'r').readlines()[0].strip()
+        if(self.token_file !=None):
+            if(os.path.exists(self.token_file)):
+                self.token = open(self.token_file, 'r').readlines()[0].strip()
+                
         if(len(self.token)<10):
             self.token = None
             
